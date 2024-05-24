@@ -1,0 +1,25 @@
+{
+  "name": "Nexter",
+  "version": "1.0.0",
+  "description": "Nexter webpage",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded sass/main.scss:css/style.css",
+    "devserver": "live-server --browser=firefox",
+    "start": "npm-run-all --parallel devserver sass-dev",
+    "compile:sass": "sass --no-source-map --style=compressed sass/main.scss:css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "sass --no-source-map --style=compressed css/style.prefix.css:css/style.css",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Jonas",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1",
+    "sass": "^1.70.0"
+  }
+}
