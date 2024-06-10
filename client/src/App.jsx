@@ -6,19 +6,21 @@ import StoryPictures from "./StoryPictures";
 import StoryContent from "./StoryContent";
 import Homes from "./Homes";
 import Gallery from "./Gallery";
+import Footer from "./Footer";
 import "./App.css";
 
 function App() {
   return (
     <div className="container">
-      <Sidebar />
-      <Header />;
+      <Sidebar/>
+      <Header />
       <Realtors />
       <Features />
       <StoryPictures />
       <StoryContent />
       <Homes />
       <Gallery />
+      <Footer />
     </div>
   );
 }
