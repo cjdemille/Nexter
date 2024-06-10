@@ -377,6 +377,10 @@ body {
   justify-self: end;
   margin: 1rem;
   z-index: 1;
+  transition: all 0.2s;
+}
+.home__like--empty {
+  fill: rgba(249, 247, 246, 0.9);
 }
 .home__name {
   grid-row: 1/2;

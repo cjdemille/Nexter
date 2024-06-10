@@ -1,8 +1,18 @@
+import { useState } from "react";
+
 export default function Home({ img, name, location, rooms, size, price }) {
+  const [fav, setFav] = useState(false);
+
+  const handleHeartClick = () => {
+    setFav((curr) => !curr);
+  };
   return (
     <div className="home">
       <img src={img} alt={name} className="home__img" />
-      <svg className="home__like">
+      <svg
+        className={!fav ? "home__like home__like--empty" : "home__like"}
+        onClick={handleHeartClick}
+      >
         <use xlinkHref="img/sprite.svg#icon-heart-full"></use>
       </svg>
       <h5 className="home__name">{name}</h5>
@@ -34,7 +44,7 @@ export default function Home({ img, name, location, rooms, size, price }) {
         </svg>
         <p>${price}</p>
       </div>
-      <button className="btn btn__home">Contact Realtor</button>
+      <button className="btn home__btn">Contact Realtor</button>
     </div>
   );
 }
