@@ -6,6 +6,7 @@ mongoose.connect("mongodb://localhost:27017/Nexter");
 mongoose.Promise = Promise;
 
 module.exports.House = require("./house");
+module.exports.Realtor = require('./realtor');
 
 const db = mongoose.connection;
 

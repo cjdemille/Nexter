@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const House = require("../models/house");
+const Realtor = require('../models/realtor');
 
 mongoose.connect("mongodb://localhost:27017/Nexter");
 
@@ -12,6 +13,7 @@ db.once("open", () => {
 
 const seedDB = async () => {
   await House.deleteMany({});
+  await Realtor.deleteMany({});
   const newHouse1 = new House({
     name: "Beautify Family House",
     location: "USA",
@@ -71,6 +73,30 @@ const seedDB = async () => {
     img: "img/house-6.jpeg",
   });
   await newHouse6.save();
+
+
+  const newRealtor1 = new Realtor({
+    name:"Erik Feinman", 
+    img: "img/realtor-1.jpeg", 
+    housesSold:245
+  })
+  await newRealtor1.save();
+
+  const newRealtor2 = new Realtor({
+    name:"Kim Brown", 
+    img: "img/realtor-2.jpeg", 
+    housesSold:212
+  })
+  await newRealtor2.save();
+
+  const newRealtor3 = new Realtor({
+    name:"Toby Ramsey", 
+    img: "img/realtor-3.jpeg", 
+    housesSold:198
+  })
+  await newRealtor3.save();
+
+
 };
 
 seedDB().then(() => {
