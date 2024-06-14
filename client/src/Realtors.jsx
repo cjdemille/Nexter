@@ -29,9 +29,7 @@ export default function Realtors() {
     <section className="realtors">
       <h3 className="heading-3">Top 3 realtors</h3>
       <section className="realtors__list">
-
         {!isLoading && realtors.length && realtors.map((realtor)=><Realtor key={realtor.id} realtor={realtor}/> )}
-       
       </section>
     </section>
   );
