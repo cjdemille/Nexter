@@ -13,6 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
+
 // app.use("/api/houses", houseRoutes);
 
 app.get("/", (req, res) => {

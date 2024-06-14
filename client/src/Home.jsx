@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function Home({ img, name, location, rooms, size, price }) {
-  const [fav, setFav] = useState(false);
+export default function Home({ img, name, location, rooms, size, price, isFav}) {
+  const [fav, setFav] = useState(isFav);
 
   const handleHeartClick = () => {
     setFav((curr) => !curr);
